@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar4546"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="Access denied"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView
+        android:id="@+id/textView593"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="One or more permissions aren't granted.To grant Accessibility permissions do so from Android's Accessibility Settings.To grant other permissions use the ADB commands found on the previous screen" />
+
+    <Switch
+        android:id="@+id/accessibilitypermissionstate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="Accessibility" />
+
+    <Switch
+        android:id="@+id/deviceownerpermissionstate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="Device Owner" />
+
+    <Switch
+        android:id="@+id/readlogspermissionstate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="READ_LOGS" />
+
+    <Switch
+        android:id="@+id/writesecuresettingspermissionstate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="WRITE_SECURE_SETTINGS" />
+
+    <Button
+        android:id="@+id/buttontoopenaccsettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open Accessibility Settings" />
+
+    <Button
+        android:id="@+id/cancelsetupinpermgrantscreen"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_marginStart="1dp"
+        android:text="Remove Device Owner(cancel setup and remove existing settings if any)" />
+
+    <Button
+        android:id="@+id/closegrantedpermissionsscreen"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="OK" />
+</LinearLayout>

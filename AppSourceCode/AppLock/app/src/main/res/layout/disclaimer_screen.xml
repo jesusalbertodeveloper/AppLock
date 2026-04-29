@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar4"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="Disclaimer"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="406dp"
+        android:layout_height="match_parent"
+        android:text="This app uses the privileged Android Device Owner API, which can permanently damage or “brick” the device if something goes wrong.\n This app is NOT intended to brick the device or cause permanent data loss. However, mistakes, bugs, unexpected Android behavior, or user‑configuration issues can still lead to a device state that cannot be fixed without a factory reset, or can cause the app to fail to operate correctly, including failing to lock apps or devices as expected. You assume all risk of device damage, including bricking, data loss, or repair costs, and all risk that the lock may not work as intended or may be bypassed.\nPlease note that this risk is very low and its quite unlikely you might have an issue with this app.\nAlso note that since the privileged Device Owner API is used the lock can be made way harder to bypass than in normal app lock apps you can find on places like the Google Play Store since the device owner app cannot be unset without proper authentication and safe mode can be disabled in this app so that the lock can't be bypassed with it.\n Also if an app is suspended there is NO way to force start it unless you unsuspend it here and hiding an app here hides it in Android's settings as well so this hiding can be similar to not having the app installed at all.\n Please note that hide/suspend also prevents the app from auto starting and from running in the background.Hide/suspend is NOT available for system apps as that could brick the device.Do NOT try to hide/suspend system apps as that could brick the device.You can safely lock system apps\n  The app is provided “as is” and without any warranty, express or implied, including warranties of performance, reliability, or security. I (the developer) will not be responsible for any data loss, device damage, unauthorized access, or any other issues arising from your use of this app, including the failure of the app to operate or the lock to work in any situation.\n    Please back up important data before continuing setup. If you do not accept these terms, tap “I Do Not Agree”; no changes will be made to your device.\n    --Recovery via ADB (recommended)--\n   This app’s Device Owner is intentionally declared as &quot;test‑only&quot; so that you can remove it using the command:   &quot;dpm remove-active-admin com.jarm.applock&quot;   from an ADB shell, which releases the Device Owner and lets you fix issues without a factory reset and without data loss.\n    This recovery method can only be used by trusted ADB hosts. Before proceeding:\n - Leave &quot;USB debugging&quot; enabled.\n - Set a &quot;trusted ADB host&quot; by connecting this device to your computer with ADB and checking the option to “always allow from this computer” when prompted.\n   - If you are on Android 11 or later, please turn on the option to &quot;disable ADB authorization timeout&quot;, so your trusted ADB host is not automatically untrusted.\n  The connection of new ADB hosts will be locked behind your app‑lock password, so someone else cannot simply add their own ADB host to remove the app lock.\n    --Important limitations--\n - This app cannot block factory resets or firmware reflashes from recovery, download, or bootloader mode.\n   - It also cannot persist itself, its lock, or its settings after a factory reset or firmware reflash.\n   These are limitations of Android, not of this app.\n    The “Disable Factory Reset” option in the app only disables factory reset in the reset options of the Android Settings app. The device can still be factory reset from recovery/download/bootloader mode."
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/disagreebutton1"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="I DO NOT AGREE" />
+
+        <Button
+            android:id="@+id/agreebutton1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="I AGREE" />
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

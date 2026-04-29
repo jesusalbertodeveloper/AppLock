@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar4"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="App Lock benefits"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/textView225"
+        android:layout_width="406dp"
+        android:layout_height="match_parent"
+        android:text="This app lock app uses the Device Owner API to offer a few features that traditional app lock applications can't offer:\n-Prevent locked apps from launching,not just prevent interaction with them\n-Suspend and hide apps from ALL launchers and Android's settings\n-Disable Safe Mode to prevent its use to bypass app lock\n-Restrict some critical device features such as uninstalling and installing apps and wallpaper changes and much more\n-Not uninstallable without authentication,even with Safe Mode"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/nextbutton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Next" />
+
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AccServDisableError">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar6933"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="Disclaimer rejected"
+        app:titleTextColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/textView5933"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You have rejected the Disclaimer.NO changes have been made to your device.If you don't want to use this app just uninstall it"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/button922933"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OK" />
+</LinearLayout>

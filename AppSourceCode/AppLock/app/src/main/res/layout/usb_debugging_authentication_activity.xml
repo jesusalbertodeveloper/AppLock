@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AuthenticationActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar212"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="Locked ADB Host Approval"
+        app:titleTextColor="#E9E4E4" />
+
+    <TextView
+        android:id="@+id/textView212"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The approval of a new ADB host is locked with a password.Please enter said password below:"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/passwordinputfieldforauthentication212"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/unlockbutton212"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Unlock" />
+</LinearLayout>

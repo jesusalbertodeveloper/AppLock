@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="Other settings"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:titleTextColor="@color/white" />
+    <Switch
+        android:id="@+id/disablesafemode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disable Safe Mode"/>
+    <Switch
+        android:id="@+id/disabledeveloperoptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disable Developer Options(also disables ADB)"/>
+    <Switch
+        android:id="@+id/disablefactoryreset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disable Factory Reset(only in Settings,not in recovery)"/>
+    <Switch
+        android:id="@+id/disablenonemergencycalls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disable calls(except emergency calls)"/>
+    <Switch
+        android:id="@+id/disablesms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disable SMS functionality"/>
+    <Switch
+        android:id="@+id/disablecreatenewandroiduseraccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DIsable creating a new Android user account"/>
+
+    <Switch
+        android:id="@+id/disabledeleteandroiduseraccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disable deleting an Android user account" />
+
+    <Switch
+        android:id="@+id/disableandroidaccountaddandremove"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disable adding/removing accounts for apps(e.g Gmail accounts)" />
+
+    <Switch
+        android:id="@+id/disableappinstall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disable installing apps"/>
+    <Switch
+        android:id="@+id/disableappuninstall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disable uninstalling apps"/>
+    <Switch
+        android:id="@+id/disablewallpaperchange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disable wallpaper changes(even if they are done by an app and not a user)"/>
+    <Switch
+        android:id="@+id/disableusbfiletransfers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disable USB file transfers(things such as MTP)"/>
+    <Switch
+        android:id="@+id/disablesystemwideprivatednschange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disable changing systemwide private DNS"/>
+    <Switch
+        android:id="@+id/disablesystemwidevpnchange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disable changing systemwide VPN"/>
+    <Switch
+        android:id="@+id/disableusercredentialchange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disable changes to user credentials(such as installing/removing CA certificates from Android&apos;s security settings)"/>
+
+    <Button
+        android:id="@+id/lockpasswordchangebutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change Lock Password"/>
+
+    <Button
+        android:id="@+id/removedeviceowner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remove this device owner to allow uninstallation of this app(Also removes app lock settings)" />
+</LinearLayout>

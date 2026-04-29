@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AuthenticationActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="Set Password"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:titleTextColor="#E9E4E4" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The app's setup is now complete.Now all you have to do is set a lock password to start locking stuff in the device\nMake sure to not forget this password as without ADB the ONLY way to reset this will be factory resetting the device unless you can somehow access the data partition in Android to remove the app's device owner,policies,restrictions and data(The password cannot be removed in Safe Mode as the app's device admin cannot be disabled outside of the app not even in Safe Mode)\nThe Remove device owner option in the app allows you to remove the lock and disable the device admin so that you can uninstall it but you need the password to do so"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/passwordsetbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Set Password" />
+</LinearLayout>
+</ScrollView>

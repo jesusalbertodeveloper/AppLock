@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar4"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="Safe Mode Disable"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/textView228"
+        android:layout_width="406dp"
+        android:layout_height="match_parent"
+        android:text="I recommend disabling safe mode to prevent its use to bypass the app lock.You can use an ADB command to reenable safe mode if Android can boot far enough for it.Disabling safe mode can prevent you from recovering from boot issues so backup your data.I am not responsible for any issue that might arise from disabling safe mode although disabling safe mode is unlikely to be an issue so i recommend just leaving it off"
+        android:textSize="18sp" />
+
+    <CheckBox
+        android:id="@+id/disablesafemodecheckbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Disable Safe Mode" />
+
+    <Button
+        android:id="@+id/nextbuttoninsafemodedisablescreen"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Save setting" />
+
+</LinearLayout>
+</ScrollView>

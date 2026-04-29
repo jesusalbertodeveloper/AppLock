@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Permissions"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="This app requires the following permissions:\nAccessibility:To run at boot and keep services running to monitor app launches to prevent apps from launching\nDevice Owner:To block app launches so that this app can require authentication before the app is launched\nREAD_LOGS:To monitor logcat logs to more quickly determine whether a locked app is being launched to enforce the lock\nWRITE_SECURE_SETTINGS:Keep the app's accessibility service enabled.You won't be able to disable it from settings until you remove this app's device owner from settings.To grant these permissions use the following ADB commands:\nTo grant the accessibility permission do it from your device's accessibility settings.\nTo grant the other permissions use ADB\nIMPORTANT:Setting this app as Device Owner requires the device to have no accounts nor secondary users at the time of setting it.Keep in mind you can add these things after setup.\nThis is an Android limitation and not a limitation of my app\nCommand to set this app as device owner:\n dpm set-device-owner com.jarm.applock/.DeviceAdminReceiverForDeviceOwner\nCommand to grant the READ_LOGS permission:pm grant com.jarm.applock android.permission.READ_LOGS\nCommand to grant the WRITE_SECURE_SETTINGS permission:\n pm grant com.jarm.applock android.permission.WRITE_SECURE_SETTINGS"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/firstaccsettingsshortcutinappplock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Open Accessibility Settings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/firstcancelsetupofapplockbutton"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:text="Remove Device Owner(cancel setup and remove existing settings if any)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstaccsettingsshortcutinappplock"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/permissioncheck"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstcancelsetupofapplockbutton"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

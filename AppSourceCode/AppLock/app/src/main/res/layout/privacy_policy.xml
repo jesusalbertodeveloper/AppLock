@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar4"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="Privacy Policy"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/textView221"
+        android:layout_width="406dp"
+        android:layout_height="match_parent"
+        android:text="1.No data collection:\n This app does not collect any personal information, device data, usage data, or any other data from your device.\n  It does not store any sensitive information outside of your device’s local storage, and it never uploads or transmits such data to any server or third party.\n It does not share your data with advertisers, analytics providers, or any other third‑party services.\n  2.No remote access nor management:\n This app does not allow remote device access, remote device control, or remote management of your device.\n It cannot be used to track, monitor, or control your device from outside your physical control.\n NOTE:After setting this app as the device owner app Android will say something along the lines of &quot;This device is managed by your organization&quot; but this app doesn't remotely manage your device and it doesnt access nor change anything without your permission.The reason for this Android notice is that the Device Owner API is intended for managing devices owned by an organization but there's no issue with using this management for this non-enterprise purpose and it needs this management in order to lock apps in a better way than traditional app lock apps.The management is also used to suspend or hide apps and restrict certain device features such as Safe Mode.This management can be removed from the app's settings and removing it is necessary to be able to uninstall this app(it can't be uninstalled by normal means)\n  3. No internet connectivity\n This app does not use internet connectivity at all and doesnt use network connectivity This app does not request the Android &quot;INTERNET&quot; permission and therefore cannot connect to the internet.This is a local-only app that doesn't rely on any remote service.It doesn't use any cloud.\n Because the app has no internet access, it is technically incapable of sending data to any server or cloud service.\n All functionality—including the app lock, Device Owner features, and device‑management settings—operates locally on your device.\n   No data is ever transmitted or synchronized with external systems.\n"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/disagreebutton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="I DO NOT AGREE" />
+
+        <Button
+            android:id="@+id/agreebutton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="I AGREE" />
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

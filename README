@@ -1,0 +1,50 @@
+This app lock app uses the Device Owner API to offer a few features that traditional app lock applications can't offer:
+-Prevent locked apps from launching,not just prevent interaction with them
+-Suspend and hide apps from ALL launchers and Android's settings
+-Disable Safe Mode to prevent its use to bypass app lock
+-Restrict some critical device features such as uninstalling and installing apps and wallpaper changes and much more
+-Not uninstallable without authentication,even with Safe Mode
+Installation:
+WARNING:Knox-tripped Samsung Android devices CANNOT configure this app in stock Samsung Android builds(e.g One UI builds) because Samsung doesnt allow device owner provisioning in Knox-tripped Samsung Android devices even if the device is now COMPLETELY stock and bootloader-locked.So if you ever rooted and/or modded Android in such a device do NOT waste your time with setting this app up.This is a limitation made by Samsung and not by me so there is nothing i can do to fix it.If the device owner setup inexplicabky 
+IMPORTANT:This production-ready app is purposefully marked as test-only to allow removal of its device owner with ADB in case things go wrong.Connecting ADB hosts will be locked with your password once this is set up so others can't just connect your device to their ADB host and remove the lock.Set a trusted ADB host(mark the always allow option when connecting) AND disable ADB authorization timeout if this option is present in Android's Developer Options in your device(if not don't worry).You also need to mantain a backup of your ADB public and private keys(they are in the .android folder of your home directory)
+Since the app is test only you can't install it without using adb install(or if you're in an ADB shell pm install) with the -t flag right after install but before the package name
+So install using something like:adb install -t appname.apk
+Important info about Android system messages regarding this app:This app uses the android app pinning feature in a privileged and strategic way with the device owner API to stop locked apps from launching.So you'll see "Screen pinned" and "Screen unpinned" messages when launching locked apps.This message comes from the Android OS and there is NOTHING i can do to disable them(Android doesn't let device owner apps disable them so there's nothing i can do about them).These messages are NOT a bug but an Android requirement
+Also after setting this app as device owner you'll get a message about your Android device being "managed by your organization".Don't worry.You'll still own your device and remain in complete control of it
+The reason for this message is cuz the Device Owner feature that this app uses for its locks is intended for corporate device management hence the organization management message.But in this case the app will still keep you in control of the device and it will let you revoke the Device Owner permission at any time.This message can't be removed by me as Android doesn't let Device Owner apps remove it.
+Setting this up requires ADB.Follow the app's onscreen instructions for this and read and accept the following agreements before proceeding.If you dont accept don't install at all
+Privacy Policy:
+1.No data collection:This app does not collect any personal information, device data, usage data, or any other data from your device.It does not store any sensitive information outside of your device’s local storage, and it never uploads or transmits such data to any server or third party.It does not share your data with advertisers, analytics providers, or any other third‑party services.
+2.No remote access nor management: This app does not allow remote device access, remote device control, or remote management of your device.It cannot be used to track, monitor, or control your device from outside your physical control.NOTE:After setting this app as the device owner app Android will say something along the lines of "This device is managed by your organization" but this app doesn't remotely manage your device and it doesnt access nor change anything without your permission.The reason for this Android notice is that the Device Owner API is intended for managing devices owned by an organization but there's no issue with using this management for this non-enterprise purpose and it needs this management in order to lock apps in a better way than traditional app lock apps.The management is also used to suspend or hide apps and restrict certain device features such as Safe Mode.This management can be removed from the app's settings and removing it is necessary to be able to uninstall this app(it can't be uninstalled by normal means)
+3. No internet connectivity This app does not use internet connectivity at all and doesnt use network connectivity This app does not request the Android "INTERNET" permission and therefore cannot connect to the internet.This is a local-only app that doesn't rely on any remote service.It doesn't use any cloud.
+Because the app has no internet access, it is technically incapable of sending data to any server or cloud service.
+All functionality—including the app lock, Device Owner features, and device‑management settings—operates locally on your device.
+No data is ever transmitted or synchronized with external systems.
+Disclaimer:
+This app uses the privileged Android Device Owner API, which can permanently damage or “brick” the device if something goes wrong.
+This app is NOT intended to brick the device or cause permanent data loss. However, mistakes, bugs, unexpected Android behavior, or user‑configuration issues can still lead to a device state that cannot be fixed without a factory reset, or can cause the app to fail to operate correctly, including failing to lock apps or devices as expected. You assume all risk of device damage, including bricking, data loss, or repair costs, and all risk that the lock may not work as intended or may be bypassed.
+Please note that this risk is very low and its quite unlikely you might have an issue with this app.
+Also note that since the privileged Device Owner API is used the lock can be made way harder to bypass than in normal app lock apps you can find on places like the Google Play Store since the device owner app cannot be unset without proper authentication and safe mode can be disabled in this app so that the lock can't be bypassed with it.
+Also if an app is suspended there is NO way to force start it unless you unsuspend it here and hiding an app here hides it in Android's settings as well so this hiding can be similar to not having the app installed at all.
+Please note that hide/suspend also prevents the app from auto starting and from running in the background.Hide/suspend is NOT available for system apps as that could brick the device.Do NOT try to hide/suspend system apps as that could brick the device.You can safely lock system apps
+The app is provided “as is” and without any warranty, express or implied, including warranties of performance, reliability, or security. I (the developer) will not be responsible for any data loss, device damage, unauthorized access, or any other issues arising from your use of this app, including the failure of the app to operate or the lock to work in any situation.
+Please back up important data before continuing setup. If you do not accept these terms, tap “I Do Not Agree”; no changes will be made to your device.
+--Recovery via ADB (recommended)--
+This app’s Device Owner is intentionally declared as "test‑only" so that you can remove it using the command:   "dpm remove-active-admin com.jarm.applock"   from an ADB shell, which releases the Device Owner and lets you fix issues without a factory reset and without data loss.
+This recovery method can only be used by trusted ADB hosts. Before proceeding:\n - Leave "USB debugging" enabled.
+- Set a "trusted ADB host" by connecting this device to your computer with ADB and checking the option to “always allow from this computer” when prompted.
+- If you are on Android 11 or later, please turn on the option to "disable ADB authorization timeout", so your trusted ADB host is not automatically untrusted.\n  The connection of new ADB hosts will be locked behind your app‑lock password, so someone else cannot simply add their own ADB host to remove the app lock.
+--Important limitations-- 
+- This app cannot block factory resets or firmware reflashes from recovery, download, or bootloader mode.
+- It also cannot persist itself, its lock, or its settings after a factory reset or firmware reflash.
+These are limitations of Android, not of this app.
+The “Disable Factory Reset” option in the app only disables factory reset in the reset options of the Android Settings app. The device can still be factory reset from recovery/download/bootloader mode.
+Recovery Options via ADB:
+Remove device owner,app lock and settings:
+settings put secure applock_emergency_remove 1
+Disable safe mode:
+settings put secure applock_safe_mode 2
+Enable safe mode:
+settings put secure applock_safe_mode 1
+Reset app lock password:
+settings put secure applock_password_reset 1
