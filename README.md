@@ -15,6 +15,8 @@
 - **Recovery via ADB**: Test-only mode allows safe removal with `dpm remove-active-admin`.
 
 **Perfect for**: Root-free, advanced app locking on stock Android. Works on most devices **except Knox-tripped Samsungs** (see Limitations).
+## App Demo
+![applockdemo](applockdemo.png)
 
 ## Download Options
 Download from either ReleaseApk(base.apk) in this repo or a Release(applock.apk)<br />
