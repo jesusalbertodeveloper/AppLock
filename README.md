@@ -1,18 +1,86 @@
-This app lock app uses the Device Owner API to offer a few features that traditional app lock applications can't offer:
--Prevent locked apps from launching,not just prevent interaction with them
--Suspend and hide apps from ALL launchers and Android's settings
--Disable Safe Mode to prevent its use to bypass app lock
--Restrict some critical device features such as uninstalling and installing apps and wallpaper changes and much more
--Not uninstallable without authentication,even with Safe Mode
-Installation:
-WARNING:Knox-tripped Samsung Android devices CANNOT configure this app in stock Samsung Android builds(e.g One UI builds) because Samsung doesnt allow device owner provisioning in Knox-tripped Samsung Android devices even if the device is now COMPLETELY stock and bootloader-locked.So if you ever rooted and/or modded Android in such a device do NOT waste your time with setting this app up.This is a limitation made by Samsung and not by me so there is nothing i can do to fix it.If the device owner setup inexplicabky 
-IMPORTANT:This production-ready app is purposefully marked as test-only to allow removal of its device owner with ADB in case things go wrong.Connecting ADB hosts will be locked with your password once this is set up so others can't just connect your device to their ADB host and remove the lock.Set a trusted ADB host(mark the always allow option when connecting) AND disable ADB authorization timeout if this option is present in Android's Developer Options in your device(if not don't worry).You also need to mantain a backup of your ADB public and private keys(they are in the .android folder of your home directory)
-Since the app is test only you can't install it without using adb install(or if you're in an ADB shell pm install) with the -t flag right after install but before the package name
-So install using something like:adb install -t appname.apk
-Important info about Android system messages regarding this app:This app uses the android app pinning feature in a privileged and strategic way with the device owner API to stop locked apps from launching.So you'll see "Screen pinned" and "Screen unpinned" messages when launching locked apps.This message comes from the Android OS and there is NOTHING i can do to disable them(Android doesn't let device owner apps disable them so there's nothing i can do about them).These messages are NOT a bug but an Android requirement
-Also after setting this app as device owner you'll get a message about your Android device being "managed by your organization".Don't worry.You'll still own your device and remain in complete control of it
-The reason for this message is cuz the Device Owner feature that this app uses for its locks is intended for corporate device management hence the organization management message.But in this case the app will still keep you in control of the device and it will let you revoke the Device Owner permission at any time.This message can't be removed by me as Android doesn't let Device Owner apps remove it.
-Setting this up requires ADB.Follow the app's onscreen instructions for this and read and accept the following agreements before proceeding.If you dont accept don't install at all
+# Advanced Android App Lock - Device Owner API (Bypass-Proof)
+
+**Lock apps securely on Android with this production-ready app lock using the privileged Device Owner API.**<br />Unlike traditional app lockers, it **prevents locked apps from launching entirely**, suspends/hides them from all launchers and Settings, disables Safe Mode bypass, and restricts critical features like app installs/uninstalls—even making itself un-uninstallable without authentication.
+[![Linux](https://img.shields.io/badge/Android-any_architecture-brightgreen?logo=Android&logoColor=white)](https://github.com/jesusalbertodeveloper/tuifileexplorerapp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen)](https://github.com/YOUR_USERNAME/REPO_NAME/releases)
+[![GitHub stars](https://img.shields.io/github/stars/jesusalbertodeveloper/AppLock?style=social)](https://github.com/jesusalbertodeveloper/AppLock)
+
+## Key Features
+- **True App Blocking**: Prevents locked apps from launching (not just blocking interaction with them using an overlay on top of the app,which is what normal app lockers do).
+- **Suspend & Hide Apps**: Prevent suspended apps from launching and hide apps from ALL launchers and Android's Settings
+- **Disable Safe Mode**: Blocks Safe Mode to prevent bypasses.
+- **Restrict Device Features**: Limits app installs/uninstalls, wallpaper changes, and more.
+- **Ununinstall Protection**: Can't be removed without authentication (even in Safe Mode).
+- **Recovery via ADB**: Test-only mode allows safe removal with `dpm remove-active-admin`.
+
+**Perfect for**: Root-free, advanced app locking on stock Android. Works on most devices **except Knox-tripped Samsungs** (see Limitations).
+
+## Installation (ADB Required)
+1. Enable **USB Debugging** in Developer Options.
+2. Install the test-only APK:  
+   ```bash
+   adb install -t appname.apk
+   ```
+3. Follow **on-screen instructions** to set as Device Owner.
+4. **Set trusted ADB host**: Check "Always allow" and disable ADB timeout (Android 11+).
+
+**Samsung Warning**: Knox-tripped Samsung Android devices devices (e.g., rooted then relocked One UI) **cannot provision Device Owner** on stock firmware—Samsung limitation, not fixable(however i will later make an app that uses root privileges for this exact same locking which can be used on Knox-tripped rooted Samsung Android devices as well).
+
+## Important Android Messages (Not Bugs)
+- **"Screen pinned/unpinned"**: Normal from Android's app pinning—required for launch blocking.
+- **"Managed by your organization"**: Due to Device Owner API (corporate feature). You retain full control of the device; revoke anytime.
+
+## Summary of the Privacy Policy
+- **Zero Data Collection**: No personal, usage, or device data stored/transmitted.
+- **No Remote Access**: Local-only; no internet permission or cloud sync.
+- **Full Transparency**: All features (locks, suspends) work offline on-device.
+
+## Summary of the Disclaimer & Risks(low risks)
+**Use at your own risk**—Device Owner API is powerful and can brick devices if misconfigured (low risk, but backup data first).
+
+- Provided "as is" with **no warranty**.
+- **Cannot block**: Factory resets, recovery/bootloader reflashes (Android limits).
+- **Safe for user apps**; do **NOT** hide/suspend system apps (risks bricking).
+- Developer not liable for data loss, damage, or bypasses.
+
+**Accept terms in-app** or don't install.
+
+## Recovery Options (ADB Shell)
+Keep USB Debugging on and trusted host set. New ADB connections require your app lock password.
+
+```bash
+# ADB commands for emergency recovery
+
+# Remove Device Owner and this app's settings(recommended)
+settings put secure applock_emergency_remove 1
+
+# Remove Device Owner(only if former command didnt work,in which case set the previous setting to 0)
+dpm remove-active-admin com.jarm.applock
+
+# Disable Safe Mode
+settings put secure applock_safe_mode 2
+
+# Enable Safe Mode
+settings put secure applock_safe_mode 1
+
+# Reset password
+settings put secure applock_password_reset 1
+```
+
+**Backup ADB keys** (~/.android folder) for recovery.
+If you run the settings commands change the respective setting to 0 after finishing if the command didn't work(the app will change it to 0 automatically if it worked)
+From an app with Android's APIs Android does NOT allow removing a secure setting so the app sets it to 0 after command execution but you can manually delete it if you wish
+
+## Limitations
+- No protection against factory reset/recovery mode.
+- Hide/Suspend: Blocks auto-start/background; unavailable for system apps.
+- Samsung Knox: Provisioning blocked on tripped devices.
+
+## Why This App Lock is Better
+Traditional Play Store lockers are easily bypassed via Safe Mode. This uses **Device Owner API** for military-grade protection—apps vanish completely until unlocked.
+
+## Privacy Policy(the same that is shown in the app)
 Privacy Policy:
 1.No data collection:This app does not collect any personal information, device data, usage data, or any other data from your device.It does not store any sensitive information outside of your device’s local storage, and it never uploads or transmits such data to any server or third party.It does not share your data with advertisers, analytics providers, or any other third‑party services.
 2.No remote access nor management: This app does not allow remote device access, remote device control, or remote management of your device.It cannot be used to track, monitor, or control your device from outside your physical control.NOTE:After setting this app as the device owner app Android will say something along the lines of "This device is managed by your organization" but this app doesn't remotely manage your device and it doesnt access nor change anything without your permission.The reason for this Android notice is that the Device Owner API is intended for managing devices owned by an organization but there's no issue with using this management for this non-enterprise purpose and it needs this management in order to lock apps in a better way than traditional app lock apps.The management is also used to suspend or hide apps and restrict certain device features such as Safe Mode.This management can be removed from the app's settings and removing it is necessary to be able to uninstall this app(it can't be uninstalled by normal means)
@@ -20,6 +88,8 @@ Privacy Policy:
 Because the app has no internet access, it is technically incapable of sending data to any server or cloud service.
 All functionality—including the app lock, Device Owner features, and device‑management settings—operates locally on your device.
 No data is ever transmitted or synchronized with external systems.
+
+## Disclaimer(the same that is shown in the app)
 Disclaimer:
 This app uses the privileged Android Device Owner API, which can permanently damage or “brick” the device if something goes wrong.
 This app is NOT intended to brick the device or cause permanent data loss. However, mistakes, bugs, unexpected Android behavior, or user‑configuration issues can still lead to a device state that cannot be fixed without a factory reset, or can cause the app to fail to operate correctly, including failing to lock apps or devices as expected. You assume all risk of device damage, including bricking, data loss, or repair costs, and all risk that the lock may not work as intended or may be bypassed.
@@ -48,3 +118,7 @@ Enable safe mode:
 settings put secure applock_safe_mode 1
 Reset app lock password:
 settings put secure applock_password_reset 1
+## License
+[MIT License](LICENSE)
+## Contribution
+**Star/Fork if useful!** Questions? Open an issue.
