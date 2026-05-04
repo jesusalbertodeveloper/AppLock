@@ -10,7 +10,7 @@
 - **True App Blocking**: Prevents locked apps from launching (not just blocking interaction with them using an overlay on top of the app,which is what normal app lockers do).
 - **Suspend & Hide Apps**: Prevent suspended apps from launching and hide apps from ALL launchers and Android's Settings
 - **Disable Safe Mode**: Blocks Safe Mode to prevent bypasses.
-- **Restrict Device Features**: Limits app installs/uninstalls, wallpaper changes, and more.
+- **Restrict Device Features**: Restricts certain Android OS features at a deep level such as installation/uninstallation of apps,addition/removal of accounts, wallpaper changes, and more.
 - **Ununinstall Protection**: Can't be removed without authentication (even in Safe Mode).
 - **Recovery via ADB**: Test-only mode allows safe removal with `dpm remove-active-admin`.
 
