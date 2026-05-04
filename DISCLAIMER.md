@@ -1,4 +1,4 @@
-Disclaimer(the same disclaimer shown in the app):
+## Disclaimer(the same one that is shown in the app)
 This app uses the privileged Android Device Owner API, which can permanently damage or “brick” the device if something goes wrong.
 This app is NOT intended to brick the device or cause permanent data loss. However, mistakes, bugs, unexpected Android behavior, or user‑configuration issues can still lead to a device state that cannot be fixed without a factory reset, or can cause the app to fail to operate correctly, including failing to lock apps or devices as expected. You assume all risk of device damage, including bricking, data loss, or repair costs, and all risk that the lock may not work as intended or may be bypassed.
 Please note that this risk is very low and its quite unlikely you might have an issue with this app.
