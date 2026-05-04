@@ -38,7 +38,7 @@ The source code is in AppSourceCode in this repo and you can compile the app fro
 ## Summary of the Privacy Policy
 - **Zero Data Collection**: No personal, usage, or device data stored/transmitted.
 - **No Remote Access**: Local-only; no internet permission or cloud sync.
-- **Full Transparency**: All features (locks, suspends) work offline on-device.<br />[Full Privacy Policy](PRIVACY_POLICY.md)
+- **Full Transparency**: All features (locks, suspends) work offline on-device.<br />[Full Privacy Policy(same as in-app)](PRIVACY_POLICY.md)
 
 
 ## Summary of the Disclaimer & Risks(low risks)
@@ -47,9 +47,9 @@ The source code is in AppSourceCode in this repo and you can compile the app fro
 - Provided "as is" with **no warranty**.
 - **Cannot block**: Factory resets, recovery/bootloader reflashes (Android limits).
 - **Safe for user apps**; do **NOT** hide/suspend system apps (risks bricking)(the app won't allow this but still don't try this).
-- Developer not liable for data loss, damage, or bypasses.<br />[Full Disclaimer](DISCLAIMER.md)
+- Developer not liable for data loss, damage, or bypasses.<br />[Full Disclaimer(same as in-app)](DISCLAIMER.md)
 
-**Accept terms in-app** or don't install.
+**Accept terms in-app(you can also read them here before downloading the app)** or don't install.
 
 
 ## Recovery Options (ADB Shell)
