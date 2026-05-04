@@ -29,7 +29,7 @@ The source code is in AppSourceCode in this repo and you can compile the app fro
 3. Follow **on-screen instructions** to set as Device Owner.
 4. **Set trusted ADB host**: Check "Always allow" and disable ADB timeout (Android 11+).
 
-**Samsung Warning**: Knox-tripped Samsung Android devices devices (e.g., rooted then relocked One UI) **cannot provision Device Owner** on stock firmware—Samsung limitation, not fixable(however i will later make an app that uses root privileges for this exact same locking which can be used on Knox-tripped rooted Samsung Android devices as well).
+**Samsung Warning**: Knox-tripped Samsung Android devices devices (e.g., rooted then relocked One UI) **cannot provision Device Owner** on stock firmware—Samsung limitation, not fixable(however i will later make a version of this app that uses root privileges for this exact same locking which can be used on Knox-tripped rooted Samsung Android devices as well).
 
 ## Important Android Messages (Not Bugs)
 - **"Screen pinned/unpinned"**: Normal from Android's app pinning—required for launch blocking.
